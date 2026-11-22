@@ -1,0 +1,41 @@
+---
+const links = [
+  { href: '#skills', label: 'Skills' },
+  { href: '#mcp', label: 'MCP' },
+  { href: '#metodo', label: 'Método' },
+  { href: '#atualizacoes', label: 'Atualizações' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-paper/95">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="#topo" class="flex items-baseline gap-2" aria-label="GTI AI, voltar ao início">
+        <span class="font-display text-2xl leading-none tracking-tight">gti</span>
+        <span class="font-mono text-xs text-accent">/ai</span>
+      </a>
+
+      <nav aria-label="Navegação principal" class="hidden items-center gap-7 md:flex">
+        {links.map((link) => (
+          <a href={link.href} class="text-sm text-muted hover:text-ink">{link.label}</a>
+        ))}
+      </nav>
+
+      <a
+        href="https://github.com/gtihq"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 border border-line px-3 py-1.5 text-sm hover:border-accent"
+      >
+        GitHub
+        <span aria-hidden="true" class="font-mono text-xs">↗</span>
+      </a>
+    </div>
+
+    <nav aria-label="Seções" class="flex gap-5 border-t border-line py-2 text-xs text-muted md:hidden">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
