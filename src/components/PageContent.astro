@@ -136,10 +136,10 @@ const t = translations(lang);
     <div class="mt-10 border border-line bg-surface p-5 sm:p-7">
       <p class="font-mono text-xs text-accent">{t.mcp.command}</p>
       <div class="mt-5 border-t border-line">
-        {t.mcp.items.map((server) => (
+        {t.mcp.items.map((item) => (
           <div class="reveal grid gap-1 border-b border-line py-2.5 font-mono text-xs last:border-0 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-6">
-            <span class="text-text">{server.name}</span>
-            <span class="text-muted">{server.note}</span>
+            <span class="text-text">{item.name}</span>
+            <span class="text-muted">{item.note}</span>
           </div>
         ))}
       </div>

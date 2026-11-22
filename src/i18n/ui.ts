@@ -5,7 +5,7 @@ export type Language = (typeof languages)[number];
 const pt = {
   meta: {
     title: 'GTI AI, pesquisa em modelos justos',
-    description: 'Fundação de pesquisa em IA da GTI. Skills, servidores MCP e treinamento com dados rastreáveis, incluindo conteúdo próprio.',
+    description: 'Fundação de pesquisa em IA da GTI. Skills, MCP e treinamento com dados rastreáveis, incluindo conteúdo próprio.',
   },
   nav: {
     skills: 'Skills',
@@ -47,9 +47,9 @@ const pt = {
       },
       {
         index: '02',
-        title: 'Servidores MCP',
+        title: 'MCP',
         text: 'Conexões com ferramentas reais, cada uma com permissões explícitas.',
-        artifact: 'mcp/<servidor>/index.ts',
+        artifact: 'mcp/<nome>/index.ts',
       },
       {
         index: '03',
@@ -75,10 +75,10 @@ const pt = {
     more: 'Ver todas no GitHub',
   },
   mcp: {
-    eyebrow: '02 / mcp',
+    eyebrow: '02 / MCP',
     title: 'Ferramentas reais para agentes.',
-    intro: 'Cada servidor expõe só o necessário, com permissões explícitas.',
-    command: '$ gti mcp list',
+    intro: 'Cada MCP expõe só o necessário, com permissões explícitas.',
+    command: '$ GTI MCP list',
     items: [
       { name: 'kabum', note: 'produtos e consulta de CEP' },
       { name: 'mercadolivre', note: 'pedidos e opções de frete' },
@@ -87,7 +87,7 @@ const pt = {
       { name: 'zoom', note: 'comparação de preços' },
     ],
     footnote: 'a lista completa fica no repositório',
-    more: 'Ver servidores',
+    more: 'Ver MCPs',
   },
   method: {
     eyebrow: '03 / pesquisa',
@@ -104,7 +104,7 @@ const pt = {
   updates: {
     eyebrow: 'atualizações',
     title: 'O GTI também publica aqui.',
-    intro: 'As próximas versões do gti serão servidas como arquivos estáticos neste domínio.',
+    intro: 'As próximas versões do GTI serão servidas como arquivos estáticos neste domínio.',
     read: 'Ler a nota',
     index: 'Ver índice em JSON',
   },
@@ -120,7 +120,7 @@ const pt = {
 const en: typeof pt = {
   meta: {
     title: 'GTI AI, research on fair models',
-    description: 'GTI AI research foundation. Skills, MCP servers and training on data that can actually be used, including my own content.',
+    description: 'GTI AI research foundation. Skills, MCP and training on data that can actually be used, including my own content.',
   },
   nav: {
     skills: 'Skills',
@@ -162,9 +162,9 @@ const en: typeof pt = {
       },
       {
         index: '02',
-        title: 'MCP servers',
+        title: 'MCP',
         text: 'Connections to real tools, each with explicit permissions.',
-        artifact: 'mcp/<server>/index.ts',
+        artifact: 'mcp/<name>/index.ts',
       },
       {
         index: '03',
@@ -190,10 +190,10 @@ const en: typeof pt = {
     more: 'See all on GitHub',
   },
   mcp: {
-    eyebrow: '02 / mcp',
+    eyebrow: '02 / MCP',
     title: 'Real tools for agents.',
-    intro: 'Every server exposes only what is needed, with explicit permissions.',
-    command: '$ gti mcp list',
+    intro: 'Every MCP exposes only what is needed, with explicit permissions.',
+    command: '$ GTI MCP list',
     items: [
       { name: 'kabum', note: 'products and postal code lookup' },
       { name: 'mercadolivre', note: 'orders and shipping options' },
@@ -202,7 +202,7 @@ const en: typeof pt = {
       { name: 'zoom', note: 'price comparison' },
     ],
     footnote: 'the full list lives in the repository',
-    more: 'See the servers',
+    more: 'See MCPs',
   },
   method: {
     eyebrow: '03 / research',
@@ -219,7 +219,7 @@ const en: typeof pt = {
   updates: {
     eyebrow: 'updates',
     title: 'GTI publishes here too.',
-    intro: 'Future gti releases will be served as static files on this domain.',
+    intro: 'Future GTI releases will be served as static files on this domain.',
     read: 'Read the note',
     index: 'View JSON index',
   },
@@ -242,5 +242,5 @@ export function localePath(language: Language, path = ''): string {
   if (language === 'pt') {
     return `/${path}`.replace(/\/$/, '') || '/';
   }
-  return `/en/${path}`.replace(/\/$/, '');
+  return `/en/${path}`;
 }
