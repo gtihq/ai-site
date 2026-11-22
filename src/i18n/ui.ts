@@ -88,7 +88,6 @@ const pt = {
   updates: {
     eyebrow: 'atualizações',
     title: 'O GTI também publica aqui.',
-    intro: 'As próximas versões do GTI serão servidas como arquivos estáticos neste domínio.',
   },
   footer: {
     tagline: 'Pesquisa independente em IA, feita por uma pessoa.',
@@ -184,7 +183,6 @@ const en: typeof pt = {
   updates: {
     eyebrow: 'updates',
     title: 'GTI publishes here too.',
-    intro: 'Future GTI releases will be served as static files on this domain.',
   },
   footer: {
     tagline: 'Independent AI research, done by one person.',

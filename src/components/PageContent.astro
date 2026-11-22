@@ -181,12 +181,9 @@ const t = translations(lang);
 <section id="atualizacoes" class="border-t border-line">
   <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
     <p class="font-mono text-xs text-accent">{t.updates.eyebrow}</p>
-    <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
-      <h2 class="max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
-        {t.updates.title}
-      </h2>
-      <p class="max-w-md leading-relaxed text-muted">{t.updates.intro}</p>
-    </div>
+    <h2 class="mt-5 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
+      {t.updates.title}
+    </h2>
 
     <ul class="mt-10 border-t border-line">
       {updates.map((update) => (
