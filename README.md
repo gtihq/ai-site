@@ -1,6 +1,6 @@
 # ai.gti.dev
 
-Site da fundação de pesquisa em IA da GTI. Skills para agentes, MCP e o método de treino com dados rastreáveis, incluindo conteúdo próprio.
+Site da fundação de pesquisa em IA da GTI. Skills, MCP, modelos de pesos abertos no Hugging Face e o método de treino com dados rastreáveis, incluindo conteúdo próprio.
 
 ## Stack
 
@@ -50,6 +50,6 @@ Para colocar no ar, a infra precisa de:
 
 ## Direção visual
 
-Base escura (`#0a0b0d`), superfície (`#121417`), texto (`#f4f5f7`) e um único acento (`#ff6b35`). Space Grotesk para títulos e texto, IBM Plex Mono para rótulos e dados. Sem serif, gradiente, glow, emoji ou cartões de feature em grade de seis. A marca GTI é sempre maiúscula. Os artefatos mostrados são reais: manifesto de procedência, skills do repo `ai-skills` e MCPs do repo `ai-mcps`.
+Base escura (`#0a0b0d`), superfície (`#121417`), texto (`#f4f5f7`) e um único acento (`#ff6b35`). Space Grotesk para títulos e texto, IBM Plex Mono para rótulos e dados. Sem serif, gradiente, glow, emoji ou cartões de feature em grade de seis. A marca GTI é sempre maiúscula. Os artefatos mostrados são reais: manifesto de procedência, skills do repo `ai-skills`, MCPs do repo `ai-mcps` e os modelos `omniglide` e `omnivox-lite` do Hugging Face `gtihq`.
 
 Os tokens vivem em `src/styles/global.css` dentro de `@theme`. Não use cores avulsas nos componentes.

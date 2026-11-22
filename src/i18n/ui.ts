@@ -5,11 +5,12 @@ export type Language = (typeof languages)[number];
 const pt = {
   meta: {
     title: 'GTI AI, pesquisa em modelos justos',
-    description: 'Fundação de pesquisa em IA da GTI. Skills, MCP e treinamento com dados rastreáveis, incluindo conteúdo próprio.',
+    description: 'Fundação de pesquisa em IA da GTI. Skills, MCP, modelos de pesos abertos e treinamento com dados rastreáveis, incluindo conteúdo próprio.',
   },
   nav: {
     skills: 'Skills',
     mcp: 'MCP',
+    models: 'Modelos',
     method: 'Método',
     updates: 'Atualizações',
     github: 'GitHub',
@@ -19,7 +20,7 @@ const pt = {
   hero: {
     eyebrow: 'pesquisa independente em IA / GTI',
     title: 'Modelos justos. Dados com origem.',
-    subtitle: 'Pesquisa em treinamento e inferência. Uso apenas conteúdo com permissão para treino, incluindo o meu. Refino modelos existentes e publico o que aprendo.',
+    subtitle: 'Pesquisa em treinamento e inferência. Uso apenas conteúdo com permissão para treino, incluindo o meu. Refino modelos existentes e publico os pesos e o que aprendo.',
     cta: 'Explorar projetos',
     secondary: 'Ver método',
   },
@@ -37,7 +38,7 @@ const pt = {
     caption: 'A origem vem antes do resultado.',
   },
   pillars: {
-    label: 'três frentes, uma pesquisa',
+    label: 'quatro frentes, uma pesquisa',
     items: [
       {
         index: '01',
@@ -53,6 +54,12 @@ const pt = {
       },
       {
         index: '03',
+        title: 'Modelos',
+        text: 'Pesos abertos no Hugging Face, treinados com dados rastreáveis.',
+        artifact: 'gtihq/<modelo>',
+      },
+      {
+        index: '04',
         title: 'Pesquisa',
         text: 'Treinamento com procedência, refino de modelos e estudo da inferência.',
         artifact: 'research/<experimento>.md',
@@ -76,7 +83,7 @@ const pt = {
   },
   mcp: {
     eyebrow: '02 / MCP',
-    title: 'Ferramentas reais para agentes.',
+    title: 'Ferramentas reais.',
     intro: 'Cada MCP expõe só o necessário, com permissões explícitas.',
     command: '$ GTI MCP list',
     items: [
@@ -89,8 +96,27 @@ const pt = {
     footnote: 'a lista completa fica no repositório',
     more: 'Ver MCPs',
   },
+  models: {
+    eyebrow: '03 / modelos',
+    title: 'Modelos abertos, treinados com origem.',
+    intro: 'Dois modelos no Hugging Face, todos com pesos abertos sob licença MIT. Feitos para rodar no dispositivo, sem rede.',
+    items: [
+      {
+        name: 'omniglide',
+        task: 'geração de texto',
+        note: 'digitação por gesto em teclado Android, em português e inglês, com dados de HeliBoard e FUTO. Cerca de 2 MB.',
+      },
+      {
+        name: 'omnivox-lite',
+        task: 'reconhecimento de fala',
+        note: 'Whisper base local com dicionários pt-BR e correção offline. Cerca de 141 MB.',
+      },
+    ],
+    note: 'Todos os modelos publicados pela GTI têm pesos abertos. Sem exceção.',
+    more: 'Ver no Hugging Face',
+  },
   method: {
-    eyebrow: '03 / pesquisa',
+    eyebrow: '04 / pesquisa',
     title: 'Como eu treino.',
     intro: 'Quatro decisões que guiam o trabalho, do primeiro exemplo à resposta final.',
     items: [
@@ -118,11 +144,12 @@ const pt = {
 const en: typeof pt = {
   meta: {
     title: 'GTI AI, research on fair models',
-    description: 'GTI AI research foundation. Skills, MCP and training on data that can actually be used, including my own content.',
+    description: 'GTI AI research foundation. Skills, MCP, open-weight models and training on data that can actually be used, including my own content.',
   },
   nav: {
     skills: 'Skills',
     mcp: 'MCP',
+    models: 'Models',
     method: 'Method',
     updates: 'Updates',
     github: 'GitHub',
@@ -132,7 +159,7 @@ const en: typeof pt = {
   hero: {
     eyebrow: 'independent AI research / GTI',
     title: 'Fair models. Data with a source.',
-    subtitle: 'Research in training and inference. I train only on content that can legitimately be used, including my own. I refine existing models and publish what I learn.',
+    subtitle: 'Research in training and inference. I train only on content that can legitimately be used, including my own. I refine existing models and publish the weights and what I learn.',
     cta: 'Explore the work',
     secondary: 'Read the method',
   },
@@ -150,7 +177,7 @@ const en: typeof pt = {
     caption: 'Provenance comes before the result.',
   },
   pillars: {
-    label: 'three fronts, one research practice',
+    label: 'four fronts, one research practice',
     items: [
       {
         index: '01',
@@ -166,6 +193,12 @@ const en: typeof pt = {
       },
       {
         index: '03',
+        title: 'Models',
+        text: 'Open weights on Hugging Face, trained on traceable data.',
+        artifact: 'gtihq/<model>',
+      },
+      {
+        index: '04',
         title: 'Research',
         text: 'Training with provenance, model refinement and inference work.',
         artifact: 'research/<experiment>.md',
@@ -189,7 +222,7 @@ const en: typeof pt = {
   },
   mcp: {
     eyebrow: '02 / MCP',
-    title: 'Real tools for agents.',
+    title: 'Real tools.',
     intro: 'Every MCP exposes only what is needed, with explicit permissions.',
     command: '$ GTI MCP list',
     items: [
@@ -202,8 +235,27 @@ const en: typeof pt = {
     footnote: 'the full list lives in the repository',
     more: 'See MCPs',
   },
+  models: {
+    eyebrow: '03 / models',
+    title: 'Open weights, trained with provenance.',
+    intro: 'Two models on Hugging Face, all open weight under MIT. Built to run on device, with no network calls.',
+    items: [
+      {
+        name: 'omniglide',
+        task: 'text generation',
+        note: 'gesture typing for an Android keyboard in Portuguese and English, trained on HeliBoard and FUTO traces. About 2 MB.',
+      },
+      {
+        name: 'omnivox-lite',
+        task: 'speech recognition',
+        note: 'local Whisper base with pt-BR dictionaries and offline correction. About 141 MB.',
+      },
+    ],
+    note: 'Every model published by GTI has open weights. No exceptions.',
+    more: 'See on Hugging Face',
+  },
   method: {
-    eyebrow: '03 / research',
+    eyebrow: '04 / research',
     title: 'How I train.',
     intro: 'Four decisions that guide the work, from the first example to the final answer.',
     items: [
