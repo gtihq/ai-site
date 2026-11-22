@@ -4,7 +4,6 @@ export interface Update {
   date: string;
   title: Record<Language, string>;
   summary: Record<Language, string>;
-  path: string;
 }
 
 export const updates: Update[] = [
@@ -18,6 +17,5 @@ export const updates: Update[] = [
       pt: 'Skills, MCP e o método de treino passam a ter um endereço único. As próximas versões do GTI serão publicadas neste mesmo lugar.',
       en: 'Skills, MCP and the training method now have a single address. Future GTI releases will be published here as well.',
     },
-    path: '/updates/2026-11-22-lancamento.md',
   },
 ];

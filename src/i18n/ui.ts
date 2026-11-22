@@ -68,8 +68,8 @@ const pt = {
   },
   skills: {
     eyebrow: '01 / skills',
-    title: 'Instruções no repositório.',
-    intro: 'Cada skill é um diretório com instruções, exemplos e limites. O agente encontra pela estrutura.',
+    title: 'Uma skill, um diretório.',
+    intro: 'Cada uma traz instruções, exemplos e limites. O agente encontra pela estrutura, sem registro central.',
     columns: ['skill', 'área', 'função'],
     items: [
       { name: 'security-audit', area: 'código', note: 'revisão defensiva de repositórios' },
@@ -131,7 +131,6 @@ const pt = {
     eyebrow: 'atualizações',
     title: 'O GTI também publica aqui.',
     intro: 'As próximas versões do GTI serão servidas como arquivos estáticos neste domínio.',
-    read: 'Ler a nota',
   },
   footer: {
     tagline: 'Pesquisa independente em IA, feita por uma pessoa.',
@@ -207,8 +206,8 @@ const en: typeof pt = {
   },
   skills: {
     eyebrow: '01 / skills',
-    title: 'Instructions in the repo.',
-    intro: 'Each skill is a directory with instructions, examples and limits. The agent finds it through the structure.',
+    title: 'One skill, one directory.',
+    intro: 'Each one carries instructions, examples and limits. The agent finds it through the structure, with no central registry.',
     columns: ['skill', 'area', 'what it does'],
     items: [
       { name: 'security-audit', area: 'code', note: 'defensive review of repositories' },
@@ -270,7 +269,6 @@ const en: typeof pt = {
     eyebrow: 'updates',
     title: 'GTI publishes here too.',
     intro: 'Future GTI releases will be served as static files on this domain.',
-    read: 'Read the note',
   },
   footer: {
     tagline: 'Independent AI research, done by one person.',
