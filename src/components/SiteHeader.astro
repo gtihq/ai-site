@@ -32,11 +32,11 @@ const sections = [
 
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-1 font-mono text-xs" aria-label={t.nav.language}>
-          <a href={localePath('pt')} hreflang="pt-BR" class:list={['hover:text-accent', lang === 'pt' ? 'text-accent' : 'text-muted']} aria-current={lang === 'pt' ? 'page' : undefined}>
+          <a href={localePath('pt')} hreflang="pt-BR" data-lang="pt" class:list={['hover:text-accent', lang === 'pt' ? 'text-accent' : 'text-muted']} aria-current={lang === 'pt' ? 'page' : undefined}>
             PT
           </a>
           <span class="text-line">/</span>
-          <a href={localePath('en')} hreflang="en" class:list={['hover:text-accent', lang === 'en' ? 'text-accent' : 'text-muted']} aria-current={lang === 'en' ? 'page' : undefined}>
+          <a href={localePath('en')} hreflang="en" data-lang="en" class:list={['hover:text-accent', lang === 'en' ? 'text-accent' : 'text-muted']} aria-current={lang === 'en' ? 'page' : undefined}>
             EN
           </a>
         </div>
