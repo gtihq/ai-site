@@ -24,7 +24,7 @@ O modo dev escuta em todas as interfaces, então também responde no IP do Tails
 
 ## Servir arquivos estáticos com Node
 
-`server.mjs` serve `dist/`, serve `public/updates/` em `/updates/`, bloqueia travessia de diretório e não lista diretórios. É por aqui que as futuras versões do `GTI` podem ser publicadas como arquivos estáticos. Para adicionar uma atualização, crie o arquivo em `public/updates/` e uma entrada em `public/updates/index.json`.
+`server.mjs` serve `dist/`, serve `public/updates/` em `/updates/`, bloqueia travessia de diretório e não lista diretórios. É por aqui que as futuras versões do `GTI` podem ser publicadas como arquivos estáticos. Para adicionar uma atualização, crie o arquivo em `public/updates/` e uma entrada em `src/data/updates.ts`.
 
 ## Deploy
 

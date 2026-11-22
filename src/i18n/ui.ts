@@ -106,13 +106,11 @@ const pt = {
     title: 'O GTI também publica aqui.',
     intro: 'As próximas versões do GTI serão servidas como arquivos estáticos neste domínio.',
     read: 'Ler a nota',
-    index: 'Ver índice em JSON',
   },
   footer: {
     tagline: 'Pesquisa independente em IA, feita por uma pessoa.',
     github: 'GitHub',
     updates: 'Atualizações',
-    issues: 'Abrir issue',
     copyright: '© 2026 GTI',
   },
 };
@@ -221,13 +219,11 @@ const en: typeof pt = {
     title: 'GTI publishes here too.',
     intro: 'Future GTI releases will be served as static files on this domain.',
     read: 'Read the note',
-    index: 'View JSON index',
   },
   footer: {
     tagline: 'Independent AI research, done by one person.',
     github: 'GitHub',
     updates: 'Updates',
-    issues: 'Open an issue',
     copyright: '© 2026 GTI',
   },
 };

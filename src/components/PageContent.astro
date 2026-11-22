@@ -1,7 +1,7 @@
 ---
 import { translations } from '../i18n/ui';
 import type { Language } from '../i18n/ui';
-import updates from '../../public/updates/index.json';
+import { updates } from '../data/updates';
 
 interface Props {
   lang: Language;
@@ -206,13 +206,5 @@ const t = translations(lang);
         </li>
       ))}
     </ul>
-
-    <a
-      href="/updates/index.json"
-      class="mt-6 inline-flex items-center gap-2 text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent"
-    >
-      {t.updates.index}
-      <span aria-hidden="true" class="font-mono">↗</span>
-    </a>
   </div>
 </section>
