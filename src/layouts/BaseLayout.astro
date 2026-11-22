@@ -30,6 +30,7 @@ const { title, description } = Astro.props;
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ai.gti.dev/" />
     <title>{title}</title>
+    <script is:inline src="/reveal.js"></script>
   </head>
   <body class="min-h-screen">
     <a
@@ -43,6 +44,5 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <SiteFooter />
-    <script src="/reveal.js" defer></script>
   </body>
 </html>

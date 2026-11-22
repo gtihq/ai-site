@@ -38,19 +38,19 @@
 }
 
 @layer utilities {
-  .reveal {
+  .js .reveal {
     opacity: 0;
     transform: translateY(8px);
     transition: opacity 500ms ease, transform 500ms ease;
   }
 
-  .reveal.is-visible {
+  .js .reveal.is-visible {
     opacity: 1;
     transform: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal {
+    .js .reveal {
       opacity: 1;
       transform: none;
       transition: none;

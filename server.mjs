@@ -34,10 +34,17 @@ function safePath(base, urlPath) {
 }
 
 function sendFile(res, path, status = 200) {
-  const type = mime[extname(path).toLowerCase()] || 'application/octet-stream';
+  const extension = extname(path).toLowerCase();
+  const type = mime[extension] || 'application/octet-stream';
   const isUpdate = path.startsWith(`${updatesRoot}${sep}`);
+  let cache = 'public, max-age=3600';
+  if (isUpdate) {
+    cache = 'public, max-age=300';
+  } else if (extension === '.html') {
+    cache = 'no-cache';
+  }
   res.writeHead(status, {
-    'Cache-Control': isUpdate ? 'public, max-age=300' : 'public, max-age=3600',
+    'Cache-Control': cache,
     'Content-Type': type,
     'X-Content-Type-Options': 'nosniff',
   });
