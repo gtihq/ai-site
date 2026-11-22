@@ -50,6 +50,6 @@ Para colocar no ar, a infra precisa de:
 
 ## Direção visual
 
-Base escura (`#0a0b0d`), superfície (`#121417`), texto (`#f4f5f7`) e um único acento (`#ff6b35`). Space Grotesk para títulos e texto, IBM Plex Mono para rótulos e dados. Sem serif, gradiente, glow, emoji ou cartões de feature em grade de seis. A marca GTI é sempre maiúscula. Os artefatos mostrados são reais: manifesto de procedência, skills do repo `ai-skills`, MCPs do repo `ai-mcps` e os modelos `omniglide` e `omnivox-lite` do Hugging Face `gtihq`.
+Base escura (`#0a0b0d`), superfície (`#121417`), texto (`#f4f5f7`) e um único acento (`#ff6b35`). Space Grotesk para títulos e texto, IBM Plex Mono para rótulos e dados. Sem serif, gradiente, glow, emoji ou cartões de feature em grade de seis. A marca GTI é sempre maiúscula. O conteúdo é real: o manifesto de procedência, as frentes de skills e MCP dos repos `ai-skills` e `ai-mcps`, e os modelos `omniglide` e `omnivox-lite` do Hugging Face `gtihq`, com link no título de cada um.
 
 Os tokens vivem em `src/styles/global.css` dentro de `@theme`. Não use cores avulsas nos componentes.

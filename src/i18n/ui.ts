@@ -5,11 +5,10 @@ export type Language = (typeof languages)[number];
 const pt = {
   meta: {
     title: 'GTI AI, pesquisa em modelos justos',
-    description: 'Fundação de pesquisa em IA da GTI. Skills, MCP, modelos de pesos abertos e treinamento com dados rastreáveis, incluindo conteúdo próprio.',
+    description: 'GTI AI. Skills, MCP, modelos de pesos abertos e pesquisa em treinamento justo. Tudo em um só lugar.',
   },
   nav: {
-    skills: 'Skills',
-    mcp: 'MCP',
+    included: 'Incluído',
     models: 'Modelos',
     method: 'Método',
     updates: 'Atualizações',
@@ -21,7 +20,7 @@ const pt = {
     eyebrow: 'pesquisa independente em IA / GTI',
     title: 'Modelos justos. Dados com origem.',
     subtitle: 'Pesquisa em treinamento e inferência. Uso apenas conteúdo com permissão para treino, incluindo o meu. Refino modelos existentes e publico os pesos e o que aprendo.',
-    cta: 'Explorar projetos',
+    cta: 'Ver o que está incluso',
     secondary: 'Ver método',
   },
   manifest: {
@@ -37,77 +36,31 @@ const pt = {
     footnote: 'todo exemplo rastreado até a fonte',
     caption: 'A origem vem antes do resultado.',
   },
-  pillars: {
-    label: 'quatro frentes, uma pesquisa',
+  included: {
+    eyebrow: 'incluído',
+    title: 'Tudo que o agente precisa.',
+    intro: 'Skills, conexões MCP e modelos de pesos abertos. Um conjunto pronto para usar, sem registro manual.',
     items: [
-      {
-        index: '01',
-        title: 'Skills',
-        text: 'Instruções que agentes descobrem por convenção, sem registro central.',
-        artifact: 'skills/<nome>/SKILL.md',
-      },
-      {
-        index: '02',
-        title: 'MCP',
-        text: 'Conexões com ferramentas reais, cada uma com permissões explícitas.',
-        artifact: 'mcp/<nome>/index.ts',
-      },
-      {
-        index: '03',
-        title: 'Modelos',
-        text: 'Pesos abertos no Hugging Face, treinados com dados rastreáveis.',
-        artifact: 'gtihq/<modelo>',
-      },
-      {
-        index: '04',
-        title: 'Pesquisa',
-        text: 'Treinamento com procedência, refino de modelos e estudo da inferência.',
-        artifact: 'research/<experimento>.md',
-      },
+      { index: '01', title: 'Skills', text: 'Instruções prontas, descobertas pela estrutura do repositório.' },
+      { index: '02', title: 'MCP', text: 'Conexões com ferramentas reais e permissões explícitas.' },
+      { index: '03', title: 'Modelos', text: 'Pesos abertos no Hugging Face, treinados com dados rastreáveis.' },
+      { index: '04', title: 'Pesquisa', text: 'Refino de modelos e estudo da inferência.' },
     ],
-  },
-  skills: {
-    eyebrow: '01 / skills',
-    title: 'Uma skill, um diretório.',
-    intro: 'Cada uma traz instruções, exemplos e limites. O agente encontra pela estrutura, sem registro central.',
-    columns: ['skill', 'área', 'função'],
-    items: [
-      { name: 'security-audit', area: 'código', note: 'revisão defensiva de repositórios' },
-      { name: 'llm-fine-tuning', area: 'modelos', note: 'treino supervisionado com LoRA' },
-      { name: 'weight-space-programming', area: 'modelos', note: 'edição direta de pesos' },
-      { name: 'unslop-interface', area: 'interface', note: 'polimento de telas geradas por IA' },
-      { name: 'infra-expert', area: 'infra', note: 'revisão e mudanças de infraestrutura' },
-      { name: 'web-performance-audit', area: 'web', note: 'Core Web Vitals e carregamento' },
-    ],
-    more: 'Ver todas no GitHub',
-  },
-  mcp: {
-    eyebrow: '02 / MCP',
-    title: 'Ferramentas reais.',
-    intro: 'Cada MCP expõe só o necessário, com permissões explícitas.',
-    command: '$ GTI MCP list',
-    items: [
-      { name: 'kabum', note: 'produtos e consulta de CEP' },
-      { name: 'mercadolivre', note: 'pedidos e opções de frete' },
-      { name: 'shopee', note: 'categorias e tendências' },
-      { name: 'twitter', note: 'tendências e busca' },
-      { name: 'zoom', note: 'comparação de preços' },
-    ],
-    footnote: 'a lista completa fica no repositório',
-    more: 'Ver MCPs',
   },
   models: {
-    eyebrow: '03 / modelos',
-    title: 'Modelos abertos, treinados com origem.',
-    intro: 'Dois modelos no Hugging Face, todos com pesos abertos sob licença MIT. Feitos para rodar no dispositivo, sem rede.',
+    eyebrow: 'modelos',
+    title: 'Pesos abertos, sempre.',
+    intro: 'Dois modelos no Hugging Face, todos sob licença MIT. Feitos para rodar no dispositivo, sem rede.',
     items: [
       {
         name: 'omniglide',
+        href: 'https://huggingface.co/gtihq/omniglide',
         task: 'geração de texto',
         note: 'digitação por gesto em teclado Android, em português e inglês, com dados de HeliBoard e FUTO. Cerca de 2 MB.',
       },
       {
         name: 'omnivox-lite',
+        href: 'https://huggingface.co/gtihq/omnivox-lite',
         task: 'reconhecimento de fala',
         note: 'Whisper base local com dicionários pt-BR e correção offline. Cerca de 141 MB.',
       },
@@ -116,7 +69,7 @@ const pt = {
     more: 'Ver no Hugging Face',
   },
   method: {
-    eyebrow: '04 / pesquisa',
+    eyebrow: 'pesquisa',
     title: 'Como eu treino.',
     intro: 'Quatro decisões que guiam o trabalho, do primeiro exemplo à resposta final.',
     items: [
@@ -126,6 +79,11 @@ const pt = {
       { index: '04', title: 'Inferência também é pesquisa', text: 'Estudo como o modelo responde, não só como ele foi treinado.' },
     ],
     note: 'Não uso conteúdo obtido sem permissão para treino. Isso inclui material raspado da web e dados pessoais de outras pessoas.',
+  },
+  cta: {
+    title: 'Os pesos estão abertos.',
+    text: 'Baixe, teste e refine. Os modelos estão no Hugging Face sob licença MIT.',
+    button: 'Ver modelos',
   },
   updates: {
     eyebrow: 'atualizações',
@@ -143,11 +101,10 @@ const pt = {
 const en: typeof pt = {
   meta: {
     title: 'GTI AI, research on fair models',
-    description: 'GTI AI research foundation. Skills, MCP, open-weight models and training on data that can actually be used, including my own content.',
+    description: 'GTI AI. Skills, MCP, open-weight models and research on fair training. All in one place.',
   },
   nav: {
-    skills: 'Skills',
-    mcp: 'MCP',
+    included: 'Included',
     models: 'Models',
     method: 'Method',
     updates: 'Updates',
@@ -159,7 +116,7 @@ const en: typeof pt = {
     eyebrow: 'independent AI research / GTI',
     title: 'Fair models. Data with a source.',
     subtitle: 'Research in training and inference. I train only on content that can legitimately be used, including my own. I refine existing models and publish the weights and what I learn.',
-    cta: 'Explore the work',
+    cta: 'See what is included',
     secondary: 'Read the method',
   },
   manifest: {
@@ -175,77 +132,31 @@ const en: typeof pt = {
     footnote: 'every example traced back to its source',
     caption: 'Provenance comes before the result.',
   },
-  pillars: {
-    label: 'four fronts, one research practice',
+  included: {
+    eyebrow: 'included',
+    title: 'Everything the agent needs.',
+    intro: 'Skills, MCP connections and open-weight models. A ready-to-use set with no manual registration.',
     items: [
-      {
-        index: '01',
-        title: 'Skills',
-        text: 'Instructions agents discover by convention, with no central registry.',
-        artifact: 'skills/<name>/SKILL.md',
-      },
-      {
-        index: '02',
-        title: 'MCP',
-        text: 'Connections to real tools, each with explicit permissions.',
-        artifact: 'mcp/<name>/index.ts',
-      },
-      {
-        index: '03',
-        title: 'Models',
-        text: 'Open weights on Hugging Face, trained on traceable data.',
-        artifact: 'gtihq/<model>',
-      },
-      {
-        index: '04',
-        title: 'Research',
-        text: 'Training with provenance, model refinement and inference work.',
-        artifact: 'research/<experiment>.md',
-      },
+      { index: '01', title: 'Skills', text: 'Ready instructions, discovered through the repository structure.' },
+      { index: '02', title: 'MCP', text: 'Connections to real tools with explicit permissions.' },
+      { index: '03', title: 'Models', text: 'Open weights on Hugging Face, trained on traceable data.' },
+      { index: '04', title: 'Research', text: 'Model refinement and inference work.' },
     ],
-  },
-  skills: {
-    eyebrow: '01 / skills',
-    title: 'One skill, one directory.',
-    intro: 'Each one carries instructions, examples and limits. The agent finds it through the structure, with no central registry.',
-    columns: ['skill', 'area', 'what it does'],
-    items: [
-      { name: 'security-audit', area: 'code', note: 'defensive review of repositories' },
-      { name: 'llm-fine-tuning', area: 'models', note: 'supervised training with LoRA' },
-      { name: 'weight-space-programming', area: 'models', note: 'direct editing of model weights' },
-      { name: 'unslop-interface', area: 'interface', note: 'polishing AI-generated interfaces' },
-      { name: 'infra-expert', area: 'infra', note: 'infrastructure review and changes' },
-      { name: 'web-performance-audit', area: 'web', note: 'Core Web Vitals and loading' },
-    ],
-    more: 'See all on GitHub',
-  },
-  mcp: {
-    eyebrow: '02 / MCP',
-    title: 'Real tools.',
-    intro: 'Every MCP exposes only what is needed, with explicit permissions.',
-    command: '$ GTI MCP list',
-    items: [
-      { name: 'kabum', note: 'products and postal code lookup' },
-      { name: 'mercadolivre', note: 'orders and shipping options' },
-      { name: 'shopee', note: 'categories and trending searches' },
-      { name: 'twitter', note: 'trends and search' },
-      { name: 'zoom', note: 'price comparison' },
-    ],
-    footnote: 'the full list lives in the repository',
-    more: 'See MCPs',
   },
   models: {
-    eyebrow: '03 / models',
-    title: 'Open weights, trained with provenance.',
-    intro: 'Two models on Hugging Face, all open weight under MIT. Built to run on device, with no network calls.',
+    eyebrow: 'models',
+    title: 'Open weights, always.',
+    intro: 'Two models on Hugging Face, all under MIT. Built to run on device, with no network calls.',
     items: [
       {
         name: 'omniglide',
+        href: 'https://huggingface.co/gtihq/omniglide',
         task: 'text generation',
         note: 'gesture typing for an Android keyboard in Portuguese and English, trained on HeliBoard and FUTO traces. About 2 MB.',
       },
       {
         name: 'omnivox-lite',
+        href: 'https://huggingface.co/gtihq/omnivox-lite',
         task: 'speech recognition',
         note: 'local Whisper base with pt-BR dictionaries and offline correction. About 141 MB.',
       },
@@ -254,7 +165,7 @@ const en: typeof pt = {
     more: 'See on Hugging Face',
   },
   method: {
-    eyebrow: '04 / research',
+    eyebrow: 'research',
     title: 'How I train.',
     intro: 'Four decisions that guide the work, from the first example to the final answer.',
     items: [
@@ -264,6 +175,11 @@ const en: typeof pt = {
       { index: '04', title: 'Inference is research too', text: 'I study how the model answers, not only how it was trained.' },
     ],
     note: 'I do not use content obtained without permission for training. That includes scraped web material and other people’s personal data.',
+  },
+  cta: {
+    title: 'The weights are open.',
+    text: 'Download, test and refine. The models are on Hugging Face under MIT.',
+    button: 'See the models',
   },
   updates: {
     eyebrow: 'updates',
