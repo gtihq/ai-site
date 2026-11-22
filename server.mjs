@@ -83,6 +83,13 @@ const server = createServer((req, res) => {
     sendFile(res, target);
     return;
   }
+  if (existsSync(target) && statSync(target).isDirectory()) {
+    const indexFile = join(target, 'index.html');
+    if (existsSync(indexFile)) {
+      sendFile(res, indexFile);
+      return;
+    }
+  }
 
   const fallback = join(root, 'index.html');
   if (existsSync(fallback)) {

@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageContent from '../../components/PageContent.astro';
+import { translations } from '../../i18n/ui';
+
+const t = translations('en');
+---
+
+<BaseLayout lang="en" title={t.meta.title} description={t.meta.description}>
+  <PageContent lang="en" />
+</BaseLayout>

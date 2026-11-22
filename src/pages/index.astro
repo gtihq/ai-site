@@ -1,23 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import Pillars from '../components/Pillars.astro';
-import Skills from '../components/Skills.astro';
-import Mcp from '../components/Mcp.astro';
-import Method from '../components/Method.astro';
-import Updates from '../components/Updates.astro';
+import PageContent from '../components/PageContent.astro';
+import { translations } from '../i18n/ui';
+
+const t = translations('pt');
 ---
 
-<BaseLayout
-  title="GTI AI, pesquisa em modelos justos"
-  description="Fundação de pesquisa em IA da GTI. Skills para agentes, servidores MCP e treinamento com dados que podem ser usados, incluindo conteúdo próprio."
->
-  <div id="projetos">
-    <Hero />
-    <Pillars />
-    <Skills />
-    <Mcp />
-    <Method />
-    <Updates />
-  </div>
+<BaseLayout lang="pt" title={t.meta.title} description={t.meta.description}>
+  <PageContent lang="pt" />
 </BaseLayout>

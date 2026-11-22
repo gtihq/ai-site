@@ -1,0 +1,218 @@
+---
+import { translations } from '../i18n/ui';
+import type { Language } from '../i18n/ui';
+import updates from '../../public/updates/index.json';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = translations(lang);
+---
+
+<section id="topo" class="mx-auto max-w-6xl px-5 pb-20 pt-14 sm:px-8 sm:pt-20">
+  <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-7">
+      <p class="font-mono text-xs text-accent">{t.hero.eyebrow}</p>
+      <h1 class="mt-5 max-w-2xl text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.045em]">
+        {t.hero.title}
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+        {t.hero.subtitle}
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a
+          href="#projetos"
+          class="inline-flex items-center gap-2 bg-accent px-5 py-3 text-sm font-semibold text-canvas transition-opacity hover:opacity-90"
+        >
+          {t.hero.cta}
+          <span aria-hidden="true" class="font-mono">↗</span>
+        </a>
+        <a
+          href="#metodo"
+          class="text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent"
+        >
+          {t.hero.secondary}
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="border border-line bg-surface">
+        <div class="flex items-baseline justify-between border-b border-line px-5 py-4">
+          <span class="font-mono text-xs text-text">{t.manifest.title}</span>
+          <span class="font-mono text-[10px] text-muted">{t.manifest.version}</span>
+        </div>
+        <div class="grid grid-cols-[1fr_auto_auto] gap-x-5 border-b border-line px-5 py-2 font-mono text-[10px] text-muted">
+          {t.manifest.columns.map((column) => <span>{column}</span>)}
+        </div>
+        <div class="px-5 py-2">
+          {t.manifest.rows.map((row) => (
+            <div
+              class:list={[
+                'grid grid-cols-[1fr_auto_auto] gap-x-5 border-b border-line py-2.5 font-mono text-xs last:border-0',
+                row.use === 'out' && 'opacity-40',
+              ]}
+            >
+              <span>{row.source}</span>
+              <span class="text-muted">{row.permission}</span>
+              <span class="text-accent-soft">{row.use}</span>
+            </div>
+          ))}
+        </div>
+        <p class="border-t border-line px-5 py-4 font-mono text-[11px] text-muted">
+          → {t.manifest.footnote}
+        </p>
+      </div>
+      <p class="mt-3 font-mono text-[11px] text-muted">{t.manifest.caption}</p>
+    </div>
+  </div>
+</section>
+
+<section id="projetos" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <p class="font-mono text-xs text-accent">{t.pillars.label}</p>
+    <div class="mt-8 grid gap-10 md:grid-cols-3 md:gap-8">
+      {t.pillars.items.map((pillar) => (
+        <div class="reveal border-t border-line pt-5">
+          <span class="font-mono text-xs text-accent">{pillar.index}</span>
+          <h2 class="mt-4 text-2xl font-semibold tracking-[-0.03em]">{pillar.title}</h2>
+          <p class="mt-3 max-w-xs leading-relaxed text-muted">{pillar.text}</p>
+          <p class="mt-6 font-mono text-[11px] text-muted">{pillar.artifact}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <p class="font-mono text-xs text-accent">{t.skills.eyebrow}</p>
+    <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
+        {t.skills.title}
+      </h2>
+      <p class="max-w-md leading-relaxed text-muted">{t.skills.intro}</p>
+    </div>
+
+    <div class="mt-10 border-t border-line">
+      <div class="hidden gap-6 border-b border-line pb-2 font-mono text-[10px] text-muted sm:grid sm:grid-cols-[minmax(0,1fr)_7rem_minmax(0,1fr)]">
+        {t.skills.columns.map((column) => <span>{column}</span>)}
+      </div>
+      <ul>
+        {t.skills.items.map((skill) => (
+          <li class="reveal grid gap-1 border-b border-line py-4 sm:grid-cols-[minmax(0,1fr)_7rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <span class="font-mono text-sm text-text">{skill.name}</span>
+            <span class="font-mono text-xs text-accent">{skill.area}</span>
+            <span class="text-sm text-muted">{skill.note}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <a
+      href="https://github.com/gtihq/ai-skills"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-flex items-center gap-2 text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent"
+    >
+      {t.skills.more}
+      <span aria-hidden="true" class="font-mono">↗</span>
+    </a>
+  </div>
+</section>
+
+<section id="mcp" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <p class="font-mono text-xs text-accent">{t.mcp.eyebrow}</p>
+    <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
+        {t.mcp.title}
+      </h2>
+      <p class="max-w-md leading-relaxed text-muted">{t.mcp.intro}</p>
+    </div>
+
+    <div class="mt-10 border border-line bg-surface p-5 sm:p-7">
+      <p class="font-mono text-xs text-accent">{t.mcp.command}</p>
+      <div class="mt-5 border-t border-line">
+        {t.mcp.items.map((server) => (
+          <div class="reveal grid gap-1 border-b border-line py-2.5 font-mono text-xs last:border-0 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-6">
+            <span class="text-text">{server.name}</span>
+            <span class="text-muted">{server.note}</span>
+          </div>
+        ))}
+      </div>
+      <p class="mt-5 font-mono text-[11px] text-muted">{t.mcp.footnote}</p>
+    </div>
+
+    <a
+      href="https://github.com/gtihq/ai-mcps"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-flex items-center gap-2 text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent"
+    >
+      {t.mcp.more}
+      <span aria-hidden="true" class="font-mono">↗</span>
+    </a>
+  </div>
+</section>
+
+<section id="metodo" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <p class="font-mono text-xs text-accent">{t.method.eyebrow}</p>
+    <h2 class="mt-5 max-w-2xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
+      {t.method.title}
+    </h2>
+    <p class="mt-4 max-w-xl leading-relaxed text-muted">{t.method.intro}</p>
+
+    <div class="mt-10 border-t border-line">
+      {t.method.items.map((principle) => (
+        <div class="reveal grid gap-2 border-b border-line py-5 sm:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.2fr)] sm:gap-6">
+          <span class="font-mono text-xs text-accent">{principle.index}</span>
+          <h3 class="text-xl font-medium leading-snug tracking-[-0.02em]">{principle.title}</h3>
+          <p class="leading-relaxed text-muted">{principle.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-8 border-l-2 border-accent pl-4 text-sm leading-relaxed text-text">
+      {t.method.note}
+    </p>
+  </div>
+</section>
+
+<section id="atualizacoes" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <p class="font-mono text-xs text-accent">{t.updates.eyebrow}</p>
+    <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-tight tracking-[-0.035em]">
+        {t.updates.title}
+      </h2>
+      <p class="max-w-md leading-relaxed text-muted">{t.updates.intro}</p>
+    </div>
+
+    <ul class="mt-10 border-t border-line">
+      {updates.map((update) => (
+        <li class="reveal grid gap-2 border-b border-line py-5 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-6">
+          <time datetime={update.date} class="font-mono text-xs text-muted">{update.date}</time>
+          <div>
+            <h3 class="text-xl font-medium tracking-[-0.02em]">{update.title[lang]}</h3>
+            <p class="mt-2 max-w-2xl leading-relaxed text-muted">{update.summary[lang]}</p>
+            <a href={update.path} class="mt-3 inline-block text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent">
+              {t.updates.read}
+            </a>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <a
+      href="/updates/index.json"
+      class="mt-6 inline-flex items-center gap-2 text-sm text-text underline decoration-line underline-offset-4 hover:decoration-accent"
+    >
+      {t.updates.index}
+      <span aria-hidden="true" class="font-mono">↗</span>
+    </a>
+  </div>
+</section>
