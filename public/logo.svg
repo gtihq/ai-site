@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 40" role="img" aria-label="GTI AI">
+  <g fill="#f7f8f8">
+    <path d="M2.5 0H13.5L16 2.5V10H10V6H6V34H10V24H8V18H16V37.5L13.5 40H2.5L0 37.5V2.5Z"/>
+    <path d="M21.5 0H32.5L35 2.5V6H30V40H24V6H19V2.5Z"/>
+    <path d="M38 0H44V40H38Z"/>
+  </g>
+  <text x="48" y="36" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="#ff6b35">/AI</text>
+</svg>

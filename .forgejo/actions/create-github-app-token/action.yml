@@ -1,0 +1,47 @@
+name: Generate GitHub App token
+description: Gera um token de instalacao do GitHub App sem depender de uma action externa.
+
+inputs:
+  app-id:
+    description: ID numerico do GitHub App.
+    required: true
+  private-key:
+    description: Chave privada do GitHub App.
+    required: true
+  owner:
+    description: Conta onde o App esta instalado.
+    required: true
+  repositories:
+    description: Repositorios permitidos, separados por virgula ou linha.
+    required: false
+    default: ""
+  permission-contents:
+    description: Permissao de contents concedida ao token.
+    required: false
+    default: read
+  github-api-url:
+    description: URL base da API do GitHub.
+    required: false
+    default: https://api.github.com
+
+outputs:
+  token:
+    description: Token de instalacao de curta duracao.
+    value: ${{ steps.generate.outputs.token }}
+
+runs:
+  using: composite
+  steps:
+    - id: generate
+      shell: bash
+      env:
+        APP_ID: ${{ inputs.app-id }}
+        PRIVATE_KEY: ${{ inputs.private-key }}
+        OWNER: ${{ inputs.owner }}
+        REPOSITORIES: ${{ inputs.repositories }}
+        PERMISSION_CONTENTS: ${{ inputs.permission-contents }}
+        GITHUB_API_URL: ${{ inputs.github-api-url }}
+      run: |
+        set -euo pipefail
+        node "${GITHUB_WORKSPACE}/.forgejo/actions/create-github-app-token/generate.mjs" > "${RUNNER_TEMP}/github-app-token"
+        echo "token=$(cat "${RUNNER_TEMP}/github-app-token")" >> "$GITHUB_OUTPUT"

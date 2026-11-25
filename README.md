@@ -56,7 +56,7 @@ docker build --secret id=github_token,env=GITHUB_TOKEN -t ai-site:local .
 Remove-Item Env:GITHUB_TOKEN
 ```
 
-No Forgejo, o workflow gera o token com o GitHub App `gti-ci`. Os secrets `GTI_CI_APP_ID` e `GTI_CI_APP_PRIVATE_KEY` precisam estar disponíveis para este repositório, e o App precisa ter acesso de leitura a `gtihq/shared-ui`.
+No Forgejo, o workflow gera o token com o GitHub App `gti-ci` usando a action local em `.forgejo/actions/create-github-app-token`. Os secrets `GTI_CI_APP_ID` e `GTI_CI_APP_PRIVATE_KEY` precisam estar disponíveis para este repositório, e o App precisa ter acesso de leitura a `gtihq/shared-ui`.
 
 Para colocar no ar, a infra precisa de:
 
