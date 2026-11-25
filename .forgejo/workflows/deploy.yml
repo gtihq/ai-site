@@ -12,10 +12,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Gerar token temporário do GitHub
+        id: github-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.GTI_CI_APP_ID }}
+          private-key: ${{ secrets.GTI_CI_APP_PRIVATE_KEY }}
+          owner: gtihq
+          repositories: shared-ui
+          permission-contents: read
+          github-api-url: https://api.github.com
+
       - name: Build imagem e redeploy
+        env:
+          DOCKER_BUILDKIT: "1"
+          GITHUB_TOKEN: ${{ steps.github-token.outputs.token }}
         run: |
           echo "Commit: ${{ github.sha }}"
           cd "${GITHUB_WORKSPACE}"
-          docker build -t ai-site-ai-site:latest .
+          docker build --secret id=github_token,env=GITHUB_TOKEN -t ai-site-ai-site:latest .
           docker service update --force ai-site
-          echo "Deploy concluido"
+          echo "Deploy concluído"

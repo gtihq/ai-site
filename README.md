@@ -40,6 +40,24 @@ push em gtihq/ai-site (master)
 
 O workflow está em `.forgejo/workflows/deploy.yml` e o `Dockerfile` gera uma imagem que roda `node server.mjs` na porta 80.
 
+### Build local do Docker
+
+O pacote `@gtihq/shared-ui` fica em um repositório privado. Passe um token temporário como BuildKit secret, sem gravar credencial na imagem:
+
+```bash
+GITHUB_TOKEN="$(gh auth token)" docker build --secret id=github_token,env=GITHUB_TOKEN -t ai-site:local .
+```
+
+No PowerShell:
+
+```powershell
+$env:GITHUB_TOKEN = gh auth token
+docker build --secret id=github_token,env=GITHUB_TOKEN -t ai-site:local .
+Remove-Item Env:GITHUB_TOKEN
+```
+
+No Forgejo, o workflow gera o token com o GitHub App `gti-ci`. Os secrets `GTI_CI_APP_ID` e `GTI_CI_APP_PRIVATE_KEY` precisam estar disponíveis para este repositório, e o App precisa ter acesso de leitura a `gtihq/shared-ui`.
+
 Para colocar no ar, a infra precisa de:
 
 1. Pull mirror `gtihq/ai-site` no Forgejo, apontando para o GitHub.

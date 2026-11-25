@@ -11,6 +11,7 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@gtihq/shared-ui": "git+https://github.com/gtihq/shared-ui.git#62a032eee620a192047a3ffbd67bfd5ef8d3c242",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.13",
     "tailwindcss": "^4.3.5"
